@@ -1,4 +1,5 @@
-# spanins-frontend
+# spanins-frontend [![Docker Repository on Quay](https://quay.io/repository/tamu_cpt/spanindb-frontend/status "Docker Repository on Quay")](https://quay.io/repository/tamu_cpt/spanindb-frontend)
+
 This front end to https://github.com/elenimijalis/spanins was build using AngularJS.
 
 ## Usage
