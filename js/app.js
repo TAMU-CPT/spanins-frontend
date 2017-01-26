@@ -1,4 +1,16 @@
-'use strict';
+window._ = require('lodash');
+require('angular');
+require('angular-route');
+require('restangular');
+require('angular-resource');
+require('angular-material');
+require('angular-material-icons');
+require('angular-aria');
+require('angular-gravatar');
+require('angular-material-data-table');
+require('angular-messages');
+require('angular-animate');
+require('jquery');
 
 /* App Module */
 
@@ -130,7 +142,7 @@ spaninsApp.controller('PhageListCtrl', ['$scope', 'Restangular', '$location',
         $scope.updateData = function(page) {
             if(!isNaN(parseInt(page))){
                 $scope.query.page = page;
-            }
+            } else { $scope.query.page = 1; }
             $scope.query.ordering = $scope.ordering;
             $scope.query.search = $scope.search;
             $scope.query.spanin_type = $scope.choice;

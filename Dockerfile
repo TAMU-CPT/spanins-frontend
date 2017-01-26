@@ -1,11 +1,13 @@
-FROM node:4
+FROM quay.io/tamu_cpt/frontend-builder
 
 ADD . /app
 WORKDIR /app
-RUN npm install -g bower && \
-	bower install --allow-root && \
-	cp -Rv . /output/
 
-ENV BACKEND_URL http://localhost:8000
-
-CMD ["/app/entrypoint.sh"]
+RUN make node_modules && \
+	npm rebuild node-sass && \
+	make build && \
+	cp *.html /output/ && \
+	cp -Rv css /output/ && \
+	cp -Rv build/ /output/ && \
+	cp -Rv partials/ /output/ && \
+	rm -rf build
